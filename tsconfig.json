@@ -1,0 +1,9 @@
+{
+  // This file is not used in compilation. It is here to enable IDE autocomplete and type checks.
+  // Docusaurus itself is not written in TypeScript and compiles JS using Babel, not TSC.
+  "extends": "@docusaurus/tsconfig",
+  "compilerOptions": {
+    "baseUrl": "."
+  },
+  "exclude": [".docusaurus", "build", "node_modules"]
+}

@@ -1,0 +1,14 @@
+decouverte:
+  label: Découverte
+  permalink: /decouverte
+  description: Nouvelle technologie, outil ou concept découvert.
+
+note:
+  label: Note
+  permalink: /note
+  description: Note rapide, astuce ou pense-bête.
+
+incident:
+  label: Incident
+  permalink: /incident
+  description: Notes liées à un incident ou une erreur rencontrée et résolue.
