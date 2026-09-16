@@ -4,8 +4,11 @@ Sample [Docusaurus](https://docusaurus.io/) pour la traçabilité des informatio
 technologies découvertes au fil des journées de travail, selon l'approche **Docs as Code**.
 
 La structure de documentation reprend les **5 familles** décrites dans le
-[guide de Stéphane Robert sur la documentation technique](https://blog.stephane-robert.info/docs/documenter/) :
+[guide de Stéphane Robert sur la documentation technique](https://blog.stephane-robert.info/docs/documenter/),
+précédées d'une section **Prise en main** qui sert de point d'entrée :
 
+- **Prise en main** — parcours d'onboarding pas à pas pour découvrir un environnement
+  (un guide exemple complet est fourni comme modèle).
 - **Cartographie** — inventaire des technologies, outils, services découverts.
 - **Architecture** — schémas et choix techniques (diagrammes [Mermaid](https://mermaid.js.org/)).
 - **Procédures** — runbooks et checklists.
@@ -40,6 +43,9 @@ npm run build        # génère la version statique du site dans build/
 ```
 docs/
 ├── intro.md                 # page d'accueil de la documentation
+├── 00-onboarding/           # parcours de prise en main
+│   ├── index.md             # rôle de la section + comment créer un guide
+│   └── 01-projet-demo/      # guide exemple : 7 étapes numérotées
 ├── 01-cartographie/
 ├── 02-architecture/
 ├── 03-procedures/

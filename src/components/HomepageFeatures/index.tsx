@@ -26,7 +26,8 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Cartographie, Architecture, Procédures, Référentiel et Historique : une structure
-        claire pour classer chaque information au bon endroit.
+        claire pour classer chaque information au bon endroit, précédée d'une section
+        Prise en main pour découvrir un environnement pas à pas.
       </>
     ),
   },
