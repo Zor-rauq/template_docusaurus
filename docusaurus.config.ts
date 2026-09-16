@@ -87,6 +87,7 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
+        {to: '/docs/onboarding/', label: 'Prise en main', position: 'left'},
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
@@ -107,6 +108,7 @@ const config: Config = {
         {
           title: 'Documentation',
           items: [
+            {label: 'Prise en main', to: '/docs/onboarding/'},
             {label: 'Cartographie', to: '/docs/cartographie/'},
             {label: 'Architecture', to: '/docs/architecture/'},
             {label: 'Procédures', to: '/docs/procedures/'},

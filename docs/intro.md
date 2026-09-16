@@ -22,6 +22,13 @@ La documentation technique est traitée comme du code source :
 > Docs-as-Code pour la documentation technique, Wiki (Notion, Confluence...) pour la documentation
 > organisationnelle. — [Guide de Stéphane Robert](https://blog.stephane-robert.info/docs/documenter/)
 
+## Par où commencer ?
+
+La section [Prise en main](/docs/onboarding/) regroupe les parcours d'onboarding : des guides pas
+à pas qui mènent d'une machine vierge à un environnement fonctionnel. C'est le point d'entrée
+pour découvrir un environnement ; les cinq familles ci-dessous servent ensuite de référence au
+quotidien.
+
 ## Structure en 5 familles
 
 Ce site reprend la structuration en 5 familles proposée par le guide de Stéphane Robert sur la

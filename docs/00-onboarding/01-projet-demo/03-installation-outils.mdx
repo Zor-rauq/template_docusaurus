@@ -1,0 +1,174 @@
+---
+title: 3. Installation des outils
+description: Installer Git, Node.js et Docker selon le système d'exploitation du poste.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# 3. Installation des outils
+
+Trois outils sont nécessaires : **Git**, **Node.js 20** et **Docker**. Les instructions ci-dessous
+sont données par système — sélectionner l'onglet correspondant au poste.
+
+:::info Onglets synchronisés
+
+Le choix du système est mémorisé et s'applique à tous les onglets de la page.
+
+:::
+
+## Git
+
+<Tabs groupId="os">
+  <TabItem value="windows" label="Windows" default>
+
+Installer via [winget](https://learn.microsoft.com/windows/package-manager/) :
+
+```powershell
+winget install --id Git.Git -e
+```
+
+Configurer la gestion des fins de ligne, indispensable sur Windows :
+
+```powershell
+git config --global core.autocrlf true
+```
+
+  </TabItem>
+  <TabItem value="macos" label="macOS">
+
+Installer via [Homebrew](https://brew.sh/) :
+
+```bash
+brew install git
+```
+
+  </TabItem>
+  <TabItem value="linux" label="Linux">
+
+```bash
+sudo apt update && sudo apt install -y git
+```
+
+  </TabItem>
+</Tabs>
+
+Renseigner ensuite l'identité utilisée dans les commits :
+
+```bash
+git config --global user.name "Prénom Nom"
+git config --global user.email "prenom.nom@exemple.fr"
+```
+
+## Node.js 20
+
+Le projet est figé sur **Node.js 20 LTS**. Installer une version différente provoque des erreurs
+de compilation des dépendances natives.
+
+<Tabs groupId="os">
+  <TabItem value="windows" label="Windows" default>
+
+```powershell
+winget install --id CoreyButler.NVMforWindows -e
+nvm install 20
+nvm use 20
+```
+
+  </TabItem>
+  <TabItem value="macos" label="macOS">
+
+```bash
+brew install nvm
+nvm install 20
+nvm use 20
+```
+
+  </TabItem>
+  <TabItem value="linux" label="Linux">
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+nvm install 20
+nvm use 20
+```
+
+  </TabItem>
+</Tabs>
+
+:::tip Version verrouillée par le dépôt
+
+Le fichier `.nvmrc` du projet fixe la version. Après le clonage ([étape 4](./04-configuration-projet.md)),
+un simple `nvm use` dans le dossier du projet suffit à basculer sur la bonne version.
+
+:::
+
+## Docker
+
+<Tabs groupId="os">
+  <TabItem value="windows" label="Windows" default>
+
+Installer **Docker Desktop**, qui requiert WSL 2 :
+
+```powershell
+wsl --install
+winget install --id Docker.DockerDesktop -e
+```
+
+Redémarrer le poste, puis lancer Docker Desktop une première fois pour terminer l'initialisation.
+
+  </TabItem>
+  <TabItem value="macos" label="macOS">
+
+```bash
+brew install --cask docker
+```
+
+Lancer Docker Desktop une première fois pour accorder les autorisations système.
+
+  </TabItem>
+  <TabItem value="linux" label="Linux">
+
+Installer Docker Engine puis autoriser l'utilisateur courant à piloter le démon :
+
+```bash
+curl -fsSL https://get.docker.com | sh
+sudo usermod -aG docker "$USER"
+```
+
+Fermer puis rouvrir la session pour que l'appartenance au groupe prenne effet.
+
+  </TabItem>
+</Tabs>
+
+## Vérifier les installations
+
+```bash
+git --version
+node --version
+docker --version
+docker compose version
+```
+
+Les versions attendues :
+
+| Outil | Version attendue |
+|---|---|
+| Git | 2.40 ou supérieure |
+| Node.js | 20.x exactement |
+| Docker | 24 ou supérieure |
+| Docker Compose | v2 (sous-commande `docker compose`) |
+
+:::warning Docker Compose v1
+
+Si `docker compose version` échoue mais que `docker-compose --version` répond, le poste utilise
+l'ancienne v1, incompatible avec le fichier `compose.yaml` du projet. Mettre Docker à jour.
+
+:::
+
+## À la fin de cette étape
+
+- [ ] Les quatre commandes de vérification répondent sans erreur.
+- [ ] Node.js est bien en version 20.x.
+- [ ] Docker est démarré (l'icône est active, ou `docker ps` répond).
+
+Étape suivante : [Configuration du projet](./04-configuration-projet.md).
