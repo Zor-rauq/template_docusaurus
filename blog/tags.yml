@@ -12,3 +12,8 @@ incident:
   label: Incident
   permalink: /incident
   description: Notes liées à un incident ou une erreur rencontrée et résolue.
+
+conception:
+  label: Conception
+  permalink: /conception
+  description: Réflexion sur une solution avant sa mise en œuvre.
